@@ -18,17 +18,16 @@
 		<log4j.version>1.2.17</log4j.version>
 	</properties>
 	<dependencies>
+	    <dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>jsr250-api</artifactId>
+			<version>1.0</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.36</version>
-			<scope>runtime</scope>
 		</dependency>
 		<!-- <dependency> <groupId>javax.servlet</groupId> <artifactId>javax.servlet-api</artifactId> 
 			<version>3.1.0</version> </dependency> -->
@@ -104,12 +103,7 @@
 			<version>7.0</version>
 		</dependency>
 
-		<!-- 导入Mysql数据库链接jar包 -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.36</version>
-		</dependency>
+		
 		<!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
@@ -177,7 +171,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.35</version>
+			<version>5.1.46</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis.generator</groupId>
@@ -220,7 +214,7 @@
                         <dependency>
                             <groupId>mysql</groupId>
                             <artifactId>mysql-connector-java</artifactId>
-                            <version>8.0.11</version>
+                            <version>5.1.46</version>
                         </dependency>
                     </dependencies>
                     <configuration>
