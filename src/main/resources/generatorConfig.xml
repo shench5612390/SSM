@@ -3,47 +3,92 @@
   PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-    <context id="test" targetRuntime="MyBatis3">
-        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>  
-        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin> 
-         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin> 
-        <commentGenerator>
-            <!-- 这个元素用来去除指定生成的注释中是否包含生成的日期 false:表示保护 -->
-            <!-- 如果生成日期，会造成即使修改一个字段，整个实体类所有属性都会发生变化，不利于版本控制，所以设置为true -->
-            <property name="suppressDate" value="true" />
-            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
-            <property name="suppressAllComments" value="false" />
-        </commentGenerator>
-        <!--数据库链接URL，用户名、密码 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-            connectionURL="jdbc:mysql://localhost/my_db" userId="root" password="123456">
-            </jdbcConnection>
-        <javaTypeResolver>
-            <!-- This property is used to specify whether MyBatis Generator should 
-                force the use of java.math.BigDecimal for DECIMAL and NUMERIC fields, -->
-            <property name="forceBigDecimals" value="false" />
-        </javaTypeResolver>
-        <!-- 生成模型的包名和位置 -->
-        <javaModelGenerator targetPackage="org.sch.model"
-            targetProject="target">
-            <property name="enableSubPackages" value="true" />
-            <property name="trimStrings" value="true" />
-        </javaModelGenerator>
-        <!-- 生成映射文件的包名和位置 -->
-        <sqlMapGenerator targetPackage="org.sch.mapping"
-            targetProject="target">
-            <property name="enableSubPackages" value="true" />
-        </sqlMapGenerator>
-        <!-- 生成DAO的包名和位置 -->
-        <javaClientGenerator type="XMLMAPPER"
-            targetPackage="org.sch.dao" implementationPackage="org.sch.dao.impl"  targetProject="target">
-            <property name="enableSubPackages" value="true" />
-        </javaClientGenerator>
-        
-        <!-- 要生成哪些表 -->
-        <table tableName="user" domainObjectName="User"
-            enableCountByExample="false" enableUpdateByExample="false"
-            enableDeleteByExample="false" enableSelectByExample="false"
-            selectByExampleQueryId="false"></table>
-    </context>
+	<context id="test" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
+		<commentGenerator>
+			<!-- 这个元素用来去除指定生成的注释中是否包含生成的日期 false:表示保护 -->
+			<!-- 如果生成日期，会造成即使修改一个字段，整个实体类所有属性都会发生变化，不利于版本控制，所以设置为true -->
+			<property name="suppressDate" value="true" />
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+		<!--数据库链接URL，用户名、密码 -->
+		<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+			connectionURL="jdbc:sqlserver://192.168.75.144;DatabaseName=HighwayLocalCenterHT"
+			userId="sa" password="Highway!@#$%^&amp;*()">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<!-- This property is used to specify whether MyBatis Generator should 
+				force the use of java.math.BigDecimal for DECIMAL and NUMERIC fields, -->
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- 生成模型的包名和位置 -->
+		<javaModelGenerator targetPackage="com.mgskj.model"
+			targetProject="target">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<!-- 生成映射文件的包名和位置 -->
+		<sqlMapGenerator targetPackage="com.mgskj.mapping"
+			targetProject="target">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!-- 生成DAO的包名和位置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.mgskj.dao" implementationPackage="com.mgskj.dao.impl"
+			targetProject="target">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- 要生成哪些表 -->
+		<!-- <table tableName="T_EquipFault_Data" domainObjectName="TEquipFaultData" 
+			enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" 
+			enableSelectByExample="false" selectByExampleQueryId="false"></table> <table 
+			tableName="T_VD_Data_Day" domainObjectName="TVDDataDay" enableCountByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" 
+			selectByExampleQueryId="true"></table> <table tableName="T_VD_Data_Raw" domainObjectName="TVDDataRaw" 
+			enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" 
+			enableSelectByExample="false" selectByExampleQueryId="true"></table> <table 
+			tableName="T_VD_Data_Hour" domainObjectName="TVDDataHour" enableCountByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" 
+			selectByExampleQueryId="true"></table> <table tableName="T_VD_Equip" domainObjectName="TVDEquip" 
+			enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" 
+			enableSelectByExample="false" selectByExampleQueryId="false"></table> <table 
+			tableName="T_RegionInfo" domainObjectName="TRegionInfo" enableCountByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" 
+			selectByExampleQueryId="true"></table> <table tableName="T_OperationLogW" 
+			domainObjectName="TOperationLogW" enableCountByExample="false" enableUpdateByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table> 
+			<table tableName="T_OperationLogW_CMS_ControlW" domainObjectName="TOperationLogWCMSControlW" 
+			enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" 
+			enableSelectByExample="false" selectByExampleQueryId="false"></table> <table 
+			tableName="T_ET_AlarmDataW" domainObjectName="TETAlarmDataW" enableCountByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" 
+			selectByExampleQueryId="false"></table> <table tableName="T_EVD_AlarmDataW" 
+			domainObjectName="TEVDAlarmDataW" enableCountByExample="false" enableUpdateByExample="false" 
+			enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table> 
+			<table tableName="T_FA_AlarmDataW" domainObjectName="TFAAlarmDataW" enableCountByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" 
+			selectByExampleQueryId="false"></table> <table tableName="T_CMS_Equip" domainObjectName="TCMSEquip" 
+			enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" 
+			enableSelectByExample="false" selectByExampleQueryId="false"></table> <table 
+			tableName="T_ET_Equip" domainObjectName="TETEquip" enableCountByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" 
+			selectByExampleQueryId="false"></table> <table tableName="T_EVD_Equip" domainObjectName="TEVDEquip" 
+			enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" 
+			enableSelectByExample="false" selectByExampleQueryId="false"></table> <table 
+			tableName="T_FA_Equip" domainObjectName="TFAEquip" enableCountByExample="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" 
+			selectByExampleQueryId="false"></table> -->
+		<!--<table tableName="T_UserInfo" domainObjectName="TUserInfo"-->
+		<!--enableCountByExample="false" enableUpdateByExample="false"-->
+		<!--enableDeleteByExample="false" enableSelectByExample="false"-->
+		<!--selectByExampleQueryId="false"></table>-->
+		<table tableName="T_OrganizationInfo" domainObjectName="HTOrganizationInfo"
+			   enableCountByExample="false" enableUpdateByExample="false"
+			   enableDeleteByExample="false" enableSelectByExample="false"
+			   selectByExampleQueryId="false"></table>
+	</context>
 </generatorConfiguration>

@@ -1,0 +1,36 @@
+#tvdata_title {
+	width: 200px;
+	margin: 0 auto;
+	text-align: center
+}
+
+#tvdata_date {
+	width: 200px;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-right: 20px;
+	text-align: right
+}
+
+#count {
+	width: 200px;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-right: 20px;
+	text-align: right
+}
+
+#printer {
+	width: 200px;
+	margin-left: auto;
+	margin-top: 10px;
+	margin-right: 20px;
+	text-align: right
+}
+
+.layui-table-cell {
+	height: auto;
+	white-space: normal;
+	word-wrap: break-word;
+	word-break: break-all;
+}

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MgskjTable:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>MgskjTable</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="mgskjtable.war">
+      <element id="artifact" artifact-name="MgskjTable:war exploded" />
+    </root>
+  </artifact>
+</component>
